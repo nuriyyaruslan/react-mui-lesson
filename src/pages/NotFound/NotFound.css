@@ -1,0 +1,8 @@
+.notfound{
+    min-height: calc(100vh - 179px);
+    text-align: center;
+}
+.notfound h2{
+    font-size: 120px;
+    margin: 0;
+}
