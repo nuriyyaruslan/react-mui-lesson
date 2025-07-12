@@ -7,7 +7,7 @@ import axios from 'axios';
 const User = () => {
 
     const params = useParams();
-    // console.log('ID = ' + params.id);
+    console.log('ID = ' + params.id);
 
     const [ userData, setUserData ] = useState();
     const [ errorState, setErrorState] = useState();
