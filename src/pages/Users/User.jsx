@@ -1,7 +1,7 @@
 import './Users.css';
-import { Box, Container, Typography, List, ListItem } from '@mui/material';
+import { Box, Container, Typography, List, ListItem,Breadcrumbs } from '@mui/material';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const User = () => {
@@ -12,6 +12,8 @@ const User = () => {
     const [ userData, setUserData ] = useState();
     const [ errorState, setErrorState] = useState();
 
+    // localStorage.setItem('username',userData?.name);
+       sessionStorage.setItem('username',userData?.name);
 
     useEffect(() => {
         axios.get(`https://jsonplaceholder.typicode.com/users/${params.id}`).then(
@@ -31,6 +33,11 @@ const User = () => {
     return (
         <Box sx={{ minHeight: '80vh', paddingTop: '32px', paddingBottom: '32px' }}>
             <Container>
+                <Breadcrumbs aria-label="breadcrumb" sx={{ marginBottom: '32px' }}>
+                    <Link underline="hover" color="inherit" to={`/`}>Home</Link>
+                    <Link underline="hover" color="inherit" to={`/users`}>Users</Link>
+                    <Typography sx={{ color: 'text.primary' }}>{userData?.name}</Typography>
+                </Breadcrumbs>
                 <Box sx={{ padding: '16px', borderRadius: '8px', backgroundColor: '#f5f5f5' }}>
                     <Typography variant='h6' component="h6">Name: {userData?.name}</Typography>
                     <Typography variant='p' component="p">Username: {userData?.username}</Typography>

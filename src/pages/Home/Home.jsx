@@ -2,6 +2,8 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 import HomeSlider from '../../components/HomeSlider/HomeSlider';
 import { Box, Container,Typography } from '@mui/material';
 import './Home.css';
+import UsersSlider from '../../components/UsersSlider/UsersSlider';
+import UsersChart from '../../components/UsersChart/UsersChart';
 
 const Home = () => {
     return ( 
@@ -22,6 +24,10 @@ const Home = () => {
                         In some contexts, black has signified power, authority, and formality, as seen in the clothing of royalty, clergy, and judges in the past. 
                     </Typography>
                 </Box>
+                 <UsersSlider/>
+                 <Box>
+                    <UsersChart/>
+                 </Box>
                 <Box sx={{marginTop:'40px', marginBottom: '60px'}}>
                     <ContactForm/>
                 </Box>
